@@ -11,5 +11,23 @@
 
     <artifactId>generic</artifactId>
 
+<dependencies>
 
+    <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+
+    </dependency>
+    <dependency>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+    </dependency>
+
+</dependencies>
 </project>

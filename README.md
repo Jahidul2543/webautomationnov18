@@ -1,4 +1,5 @@
 # Install Jenkins and Run Jenkins Job in local
+<h2>Mac</h2>
 **1. Install Jenkins by homebrew** <br> 
 `$ brew install jenkins-lts` <br>
 **2. Go to terminal execute to launch Jenkins Server** <br>
@@ -25,6 +26,14 @@ Jenkins server should be up and reunning <br>
 ![image](https://user-images.githubusercontent.com/34196568/50379602-c164c080-061b-11e9-8a1a-8a744971583d.png)
 
 ![image](https://user-images.githubusercontent.com/34196568/50379615-21f3fd80-061c-11e9-84d0-b1bb3efd22e6.png)
+
+<h2>Windows</h2>
+
+**1. Go to https://jenkins.io/download/ and download windows zip file and unzip and install** <br>
+![image](https://user-images.githubusercontent.com/34196568/50379810-39ce8000-0622-11e9-90b0-533f9934cdf1.png)
+
+**2. It will ask for a passowrd same as mac and it will tell you where is that password. It will be a hidden file in that location. Find it and open it in text editor, copy the password, rest of the process is same from earlier step 5.** 
+![image](https://user-images.githubusercontent.com/34196568/50379816-78fcd100-0622-11e9-8e77-ddce35876db2.png)
 
 
 <br>
@@ -68,9 +77,3 @@ Jenkins server should be up and reunning <br>
 ![image](https://user-images.githubusercontent.com/34196568/50379738-ad22c280-061f-11e9-9c85-1747f80b12c4.png)
 ![image](https://user-images.githubusercontent.com/34196568/50379751-13a7e080-0620-11e9-9fd2-608ae7b22c79.png)
 ![image](https://user-images.githubusercontent.com/34196568/50379753-26221a00-0620-11e9-932f-461a6f5407fb.png)
-
-
-
-
-
- 

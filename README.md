@@ -1,10 +1,18 @@
 # Install Jenkins and Run Jenkins Job in local
 <h2>Mac</h2>
-**1. Install Jenkins by homebrew** <br> 
+
+**1.Install Jenkins by homebrew** <br> 
 `$ brew install jenkins-lts` <br>
 **2. Go to terminal execute to launch Jenkins Server** <br>
 `jenkins-lts` <br>
 Jenkins server should be up and reunning <br>
+<h2>Windows</h2>
+
+**1. Go to https://jenkins.io/download/ and download windows zip file and unzip and install** <br>
+![image](https://user-images.githubusercontent.com/34196568/50379810-39ce8000-0622-11e9-90b0-533f9934cdf1.png)
+
+**2. It will ask for a passowrd same as mac and it will tell you where is that password. It will be a hidden file in that location. Find it and open it in text editor, copy the password**  <br>
+
 
 **3. Go to localhost:8080 Get the address execute by cat. Copy the password from terminal and use**
 `$ cat /Users/administrator/.jenkins/secrets/initialAdminPassword` <br>
@@ -26,14 +34,6 @@ Jenkins server should be up and reunning <br>
 ![image](https://user-images.githubusercontent.com/34196568/50379602-c164c080-061b-11e9-8a1a-8a744971583d.png)
 
 ![image](https://user-images.githubusercontent.com/34196568/50379615-21f3fd80-061c-11e9-84d0-b1bb3efd22e6.png)
-
-<h2>Windows</h2>
-
-**1. Go to https://jenkins.io/download/ and download windows zip file and unzip and install** <br>
-![image](https://user-images.githubusercontent.com/34196568/50379810-39ce8000-0622-11e9-90b0-533f9934cdf1.png)
-
-**2. It will ask for a passowrd same as mac and it will tell you where is that password. It will be a hidden file in that location. Find it and open it in text editor, copy the password, rest of the process is same from earlier step 5.** 
-
 <br>
 <br>
 <h1>How to make Global Tool Configurations of Jenkins </h1>

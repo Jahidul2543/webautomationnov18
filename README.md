@@ -33,8 +33,6 @@ Jenkins server should be up and reunning <br>
 ![image](https://user-images.githubusercontent.com/34196568/50379810-39ce8000-0622-11e9-90b0-533f9934cdf1.png)
 
 **2. It will ask for a passowrd same as mac and it will tell you where is that password. It will be a hidden file in that location. Find it and open it in text editor, copy the password, rest of the process is same from earlier step 5.** 
-![image](https://user-images.githubusercontent.com/34196568/50379816-78fcd100-0622-11e9-8e77-ddce35876db2.png)
-
 
 <br>
 <br>

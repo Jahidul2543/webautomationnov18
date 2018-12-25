@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
         <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="AliBaba Automation Test" parallel="false" >
-    <!--parallel="false"-->
+<suite name="AliBaba Automation Test" parallel="false">
 
     <!--<parameter name="useCloudEnv" value="false"/>
     <parameter name="cloudEnvName" value="browserstack"/>-->
@@ -17,9 +16,10 @@
 <test name = "Ecommerce Home">
     <classes>
 
-        <class name="test.page.objects.HomePageTest"/>
-        <class name="test.page.objects.ContactUsPageTest"/>
+       <!-- <class name="test.page.objects.HomePageTest"/>
+        <class name="test.page.objects.ContactUsPageTest"/>-->
         <class name="test.page.objects.LoginPageTest"/>
+
 
     </classes>
 

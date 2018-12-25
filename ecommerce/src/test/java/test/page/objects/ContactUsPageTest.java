@@ -1,4 +1,4 @@
-package test.pageobjects;
+package test.page.objects;
 
 import base.BrowserDriver;
 import org.openqa.selenium.support.PageFactory;

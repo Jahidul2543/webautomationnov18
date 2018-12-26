@@ -36,11 +36,12 @@ public class LoginPageTest extends ApplicationPageBase {
 
   //  @Test
     @Test(dataProvider="DP")
-    public void validsignIn(String email, String password/*, String VerificationText*/){
+    public void invalidSignIn(String email, String password/*, String VerificationText*/){
 
         objHomePage.getLogInPage();
         objLoginPage.login(email, password);
-        System.out.println("Test Passed");
+
+
 
     }
 }

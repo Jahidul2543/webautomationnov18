@@ -1,16 +1,34 @@
 package application.page.base;
 
 import base.BrowserDriver;
+import base.PageBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import reporting.TestLogger;
 
-public class ApplicationPageBase extends BrowserDriver {
+public abstract class ApplicationPageBase extends PageBase {
     /*
     * @author Jahidul Islam
     * All commonly used helper methods should be created here
     *
     * */
+    String pageUrl;
+
+    public ApplicationPageBase(String pageUrl)
+    {
+        super(pageUrl);
+    }
+
+    public ApplicationPageBase(String pageUrl, String domain)
+    {
+        super(pageUrl, domain);
+    }
+
+    @Override
+    protected void load()
+    {
+
+    }
 
     //return status of link if it is enabled
     public static boolean isEnableStatus(WebDriver driver, WebElement web) {

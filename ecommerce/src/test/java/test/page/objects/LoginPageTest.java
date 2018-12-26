@@ -12,18 +12,19 @@ import util.MyDataReader;
 
 import java.io.File;
 
-public class LoginPageTest extends ApplicationPageBase {
+public class LoginPageTest {
 
     LoginPage objLoginPage = null;
     HomePage objHomePage = null;
     //WebDriver driver;
 
-    @BeforeMethod
+   /* @BeforeMethod
     public void initializationOfElements() {
 
         objLoginPage= PageFactory.initElements(driver, LoginPage.class);
         objHomePage = PageFactory.initElements(driver, HomePage.class);
-    }
+    }*/
+
 
     @DataProvider(name="DP")
     public Object[][] getTestData() throws Exception{

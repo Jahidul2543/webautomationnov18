@@ -10,13 +10,23 @@ import org.openqa.selenium.support.PageFactory;
 import reporting.TestLogger;
 
 public class LoginPage extends ApplicationPageBase {
-
+     private WebDriver driver ;
     @FindBy(how = How.ID, id = "email")
     private WebElement emailBox;
 
     @FindBy(how = How.ID, id = "passwd")
     private WebElement passwordBox;
 
+    public LoginPage() {
+        super(BrowserDriver.getUrl());
+        this.driver = BrowserDriver.getDriver();
+        PageFactory.initElements(driver, this);
+    }
+    @Override
+    protected void isLoaded() throws Error {
+
+        TestLogger.log("AV Home Page has been loaded");
+    }
 
     public LoginPage login(String email, String password){
 

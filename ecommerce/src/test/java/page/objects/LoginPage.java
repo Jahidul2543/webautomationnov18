@@ -24,8 +24,11 @@ public class LoginPage extends ApplicationPageBase {
         sendKeys(emailBox,"emailBox", email);
         sendKeys(passwordBox,"passwordBox",password);
 
+
         return new LoginPage();
 
     }
+
+
 
 }

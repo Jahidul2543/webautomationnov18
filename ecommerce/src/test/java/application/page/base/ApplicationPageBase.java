@@ -19,7 +19,7 @@ public class ApplicationPageBase extends BrowserDriver {
     }
     public static void sendKeys(WebElement webElement, String webElementName, String keys){
         webElement.clear();
-        TestLogger.log("Sending keys to " + webElementName);
+        TestLogger.log("Sending " + keys + " to " + webElementName);
         webElement.sendKeys(keys);
         TestLogger.log("Keys Sent to " + webElementName);
     }

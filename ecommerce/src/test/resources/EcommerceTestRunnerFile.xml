@@ -17,8 +17,8 @@
 <test name = "Ecommerce Home">
     <classes>
 
-        <class name="test.page.objects.HomePageTest"/>
-        <class name="test.page.objects.ContactUsPageTest"/>
+        <!--<class name="test.page.objects.HomePageTest"/>
+        <class name="test.page.objects.ContactUsPageTest"/>-->
         <class name="test.page.objects.LoginPageTest"/>
 
     </classes>

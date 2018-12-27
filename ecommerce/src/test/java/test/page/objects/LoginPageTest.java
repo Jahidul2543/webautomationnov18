@@ -28,8 +28,12 @@ public class LoginPageTest extends ApplicationPageBase {
         objLoginPage= PageFactory.initElements(driver, LoginPage.class);
         objHomePage = PageFactory.initElements(driver, HomePage.class);
     }
-
-   /* @DataProvider(name="DP")
+    /*
+    *
+    * Read Data from XLSX file
+    *
+    * */
+    @DataProvider(name="DP")
     public Object[][] getTestData() throws Exception{
         File filepath = new File(System.getProperty("user.dir") +  "/testData/TestData.xlsx");
         MyDataReader dr = new MyDataReader();
@@ -51,7 +55,15 @@ public class LoginPageTest extends ApplicationPageBase {
         String actulText = objLoginPage.getErroMessage();
         Assert.assertEquals(actulText, expectedText);
 
-    }*/
+    }
+    /*
+    *
+    * Read data from Google Sheet
+    * Make sure you have created client_secret.json from your account where you have Google Sheet Data file
+    * Delete .credentials directory from your module if it is exists. Other wise it will take existing/old credentials
+    * thus it may give unauthorized access error(error code starting with 4, such as 403,404)
+    *
+    * */
     @Test
     public  void invalidSigninByGoogleSheetApi() throws IOException {
 
@@ -60,10 +72,10 @@ public class LoginPageTest extends ApplicationPageBase {
        String range = "Sheet4!A2:D";
        List<List<Object>> getRecords = GoogleSheetReader.getSpreadSheetRecords(spreadsheetId,range);
 
-
+            objHomePage.getLogInPage();
 
         for (List cell: getRecords) {
-            objHomePage.getLogInPage();
+
             objLoginPage.login(cell.get(1).toString(), cell.get(2).toString());
 
             String expectedText = cell.get(3).toString();
@@ -73,41 +85,6 @@ public class LoginPageTest extends ApplicationPageBase {
 
         }
 
-
-
     }
-    @Test
-    public void invalidSignInUsingGoogleSheet(/*String email, String password, String VerificationText*/) throws IOException {
-        String spreadsheetId = "1A6G3avCchSjTPM1xoGU8YaYo3azwl4uHBsfgwRZB31A" ;
-        String range = "Sheet1!A2:D";
-
-        List<List<Object>> cellValue = GoogleSheetReader.getSpreadSheetRecords(spreadsheetId, range);
-        objHomePage.getLogInPage();
-
-        for (List cell : cellValue) {
-
-            objLoginPage.login(cell.get(1).toString(), cell.get(2).toString());
-        }
-
-    }
-
-   /* public List<String> signInByInvalidIdPass(String spreadsheetId, String range) throws IOException, InterruptedException {
-
-        List<List<Object>> cellValue = GoogleSheetReader.getSpreadSheetRecords(spreadsheetId, range);
-        List<String> actual = new ArrayList<>();
-        for (List cell : cellValue) {
-            sleepFor(1);
-            inputValueInTextBoxByWebElement(account, cell.get(1).toString());
-            inputValueInTextBoxByWebElement(password, cell.get(2).toString());
-            sleepFor(1);
-            //actual.add(getCurrentPageTitle());
-            actual.add(getTextByWebElement(signInErrorMesage));
-            System.out.println(getTextByWebElement(signInErrorMesage));
-            clearInputBox(account);
-            clearInputBox(password);
-            sleepFor(1);
-        }
-        return actual;
-    }*/
 
 }

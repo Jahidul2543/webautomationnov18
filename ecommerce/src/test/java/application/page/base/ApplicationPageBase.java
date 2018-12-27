@@ -6,6 +6,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import reporting.TestLogger;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
 public  class ApplicationPageBase extends BrowserDriver {
     /*
     * @author Jahidul Islam
@@ -41,6 +47,14 @@ public  class ApplicationPageBase extends BrowserDriver {
         TestLogger.log("Click " + webElementName );
         webElement.click();
         TestLogger.log("Clicked " + webElementName);
+    }
+    public static Properties loadProperties() throws IOException {
+        Properties prop = new Properties();
+        File filepath = new File(System.getProperty("user.dir") +  "/src/test/resources/secret.properties");
+        InputStream ism = new FileInputStream(filepath.getAbsoluteFile());
+        prop.load(ism);
+        ism.close();
+        return prop;
     }
 
 }

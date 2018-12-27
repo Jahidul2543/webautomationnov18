@@ -15,6 +15,7 @@ import sheet.google.api.GoogleSheetReader;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Properties;
 
 public class LoginPageTest extends ApplicationPageBase {
 
@@ -54,14 +55,15 @@ public class LoginPageTest extends ApplicationPageBase {
     @Test
     public  void invalidSigninByGoogleSheetApi() throws IOException {
 
-       String spreadsheetId = "1AEVTjDK-RVcr0-DlAkTlW1HlsyqTOiCA1vS3Adrh230";
+        Properties properties = loadProperties();
+       String spreadsheetId = properties.getProperty("GOOGLE.spreadsheetId");
        String range = "Sheet4!A2:D";
        List<List<Object>> getRecords = GoogleSheetReader.getSpreadSheetRecords(spreadsheetId,range);
 
+
+
         for (List cell: getRecords) {
-
             objHomePage.getLogInPage();
-
             objLoginPage.login(cell.get(1).toString(), cell.get(2).toString());
 
             String expectedText = cell.get(3).toString();

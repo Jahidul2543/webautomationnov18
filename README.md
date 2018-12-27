@@ -18,8 +18,9 @@ Jenkins server should be up and reunning <br>
 **2. It will ask for a passowrd same as mac and it will tell you where is that password. It will be a hidden file in that location. Find it and open it in text editor, copy the password**  <br>
 
 
-**3. Go to localhost:8080 Get the address execute by cat. Copy the password from terminal and use**
+**3. Go to localhost:8080 Get the address execute by cat. Copy the password from terminal and use** <br>
 `$ cat /Users/administrator/.jenkins/secrets/initialAdminPassword` <br>
+Copy the password from your command line. Shall look like same as below <br>
 `fff69c0883fb4cdb9aa85bbd72dd2fd8`
 
 ![image](https://user-images.githubusercontent.com/34196568/50379465-844aff00-0618-11e9-8dd7-371498224cba.png)

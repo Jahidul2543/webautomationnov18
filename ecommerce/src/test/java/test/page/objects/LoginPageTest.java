@@ -9,6 +9,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import page.objects.HomePage;
 import page.objects.LoginPage;
+import reporting.TestLogger;
 import sheet.google.api.GoogleSheetReader;
 import java.io.File;
 import java.io.IOException;
@@ -33,7 +34,7 @@ public class LoginPageTest extends ApplicationPageBase {
     * Read Data from XLSX file
     *
     * */
-    @DataProvider(name="DP")
+   /* @DataProvider(name="DP")
     public Object[][] getTestData() throws Exception{
         File filepath = new File(System.getProperty("user.dir") +  "/testData/TestData.xlsx");
         MyDataReader dr = new MyDataReader();
@@ -55,7 +56,7 @@ public class LoginPageTest extends ApplicationPageBase {
         String actulText = objLoginPage.getErroMessage();
         Assert.assertEquals(actulText, expectedText);
 
-    }
+    }*/
     /*
     *
     * Read data from Google Sheet
@@ -68,17 +69,18 @@ public class LoginPageTest extends ApplicationPageBase {
     public  void invalidSigninByGoogleSheetApi() throws IOException {
 
         Properties properties = loadProperties();
-       String spreadsheetId = properties.getProperty("GOOGLE.spreadsheetId");
-       String range = "Sheet4!A2:D";
-       List<List<Object>> getRecords = GoogleSheetReader.getSpreadSheetRecords(spreadsheetId,range);
+        String spreadsheetId = properties.getProperty("GOOGLE.spreadsheetId");
+        String range = properties.getProperty("GOOGLE.range");
+        TestLogger.log("Using Sheet Number " + range.charAt(5)+ " and fields range  " + range.substring(6));
+        List<List<Object>> getRecords = GoogleSheetReader.getSpreadSheetRecords(spreadsheetId,range);
 
             objHomePage.getLogInPage();
 
         for (List cell: getRecords) {
 
-            objLoginPage.login(cell.get(1).toString(), cell.get(2).toString());
+            objLoginPage.login(cell.get(0).toString(), cell.get(1).toString());
 
-            String expectedText = cell.get(3).toString();
+            String expectedText = cell.get(2).toString();
 
             String actulText = objLoginPage.getErroMessage();
             Assert.assertEquals(actulText, expectedText);

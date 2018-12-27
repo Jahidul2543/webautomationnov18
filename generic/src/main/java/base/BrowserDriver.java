@@ -16,6 +16,7 @@ import org.testng.annotations.*;
 import org.testng.annotations.Optional;
 import reporting.ExtentManager;
 import reporting.ExtentTestManager;
+import reporting.TestLogger;
 
 import java.io.File;
 import java.io.IOException;
@@ -121,9 +122,11 @@ public class BrowserDriver {
                 if (os.equalsIgnoreCase("windows")) {
                     System.setProperty("webdriver.chrome.driver", "../Generic/drivers/windows/chromedriver.exe");
                     driver = new ChromeDriver(options);
+                  //  TestLogger.log("Chrome Browser Launched");
                 } else if (os.equalsIgnoreCase("mac")) {
                     System.setProperty("webdriver.chrome.driver", "../Generic/drivers/mac/chromedriver");
                     driver = new ChromeDriver(options);
+                   // TestLogger.log("Chrome Browser Launched");
                 }
             } else if (browserName.equalsIgnoreCase("firefox")) {
                  /*

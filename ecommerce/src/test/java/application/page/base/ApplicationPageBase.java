@@ -1,12 +1,12 @@
 package application.page.base;
 
 import base.BrowserDriver;
-import base.PageBase;
+import org.apache.poi.ss.formula.functions.T;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import reporting.TestLogger;
 
-public abstract class ApplicationPageBase extends PageBase {
+public  class ApplicationPageBase extends BrowserDriver {
     /*
     * @author Jahidul Islam
     * All commonly used helper methods should be created here
@@ -14,21 +14,7 @@ public abstract class ApplicationPageBase extends PageBase {
     * */
     String pageUrl;
 
-    public ApplicationPageBase(String pageUrl)
-    {
-        super(pageUrl);
-    }
 
-    public ApplicationPageBase(String pageUrl, String domain)
-    {
-        super(pageUrl, domain);
-    }
-
-    @Override
-    protected void load()
-    {
-
-    }
 
     //return status of link if it is enabled
     public static boolean isEnableStatus(WebDriver driver, WebElement web) {
@@ -40,6 +26,21 @@ public abstract class ApplicationPageBase extends PageBase {
         TestLogger.log("Sending keys to " + webElementName);
         webElement.sendKeys(keys);
         TestLogger.log("Keys Sent to " + webElementName);
+    }
+
+    public static String getText(WebElement webElement, String webElementName){
+
+        TestLogger.log("Getting Text from " + webElementName);
+      String actualText =  webElement.getText();
+      TestLogger.log("Actual text: " + actualText);
+
+      return actualText;
+
+    }
+    public static void click(WebElement webElement, String webElementName){
+        TestLogger.log("Click " + webElementName );
+        webElement.click();
+        TestLogger.log("Clicked " + webElementName);
     }
 
 }

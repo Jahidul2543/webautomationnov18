@@ -25,16 +25,16 @@ public class HomePage extends ApplicationPageBase  {
     @FindBy(how = How.PARTIAL_LINK_TEXT, partialLinkText = "Sign in")
     private WebElement signInButton;
 
-    public HomePage() {
+    /*public HomePage() {
         super(BrowserDriver.getUrl());
         this.driver = BrowserDriver.getDriver();
         PageFactory.initElements(driver, this);
     }
-    @Override
+
     protected void isLoaded() throws Error {
 
         TestLogger.log("AV Home Page has been loaded");
-    }
+    }*/
     public LoginPage getLogInPage() {
 
         signInButton.click();

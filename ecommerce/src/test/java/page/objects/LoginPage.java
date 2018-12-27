@@ -17,18 +17,32 @@ public class LoginPage extends ApplicationPageBase {
     @FindBy(how = How.ID, id = "passwd")
     private WebElement passwordBox;
 
-    public LoginPage() {
-        super(BrowserDriver.getUrl());
-        this.driver = BrowserDriver.getDriver();
-        PageFactory.initElements(driver, this);
-    }
-    @Override
-    protected void isLoaded() throws Error {
+    @FindBy(how = How.CLASS_NAME, css = "#center_column > div.alert.alert-danger > p")
+    private WebElement errorMessage;
 
-        TestLogger.log("AV Home Page has been loaded");
-    }
+    @FindBy(how = How.ID, id = "SubmitLogin")
+    private WebElement submitButton;
 
     public LoginPage login(String email, String password){
+
+        sendKeys(emailBox, "emailBox", email);
+        sendKeys(passwordBox,"passwordBox", password);
+        click(submitButton,"submitButton");
+
+        return new LoginPage();
+
+    }
+
+
+    public String getErroMessage(){
+
+        String actualText = getText(errorMessage,"errorMessage");
+
+        return actualText;
+    }
+
+
+    /*public LoginPage login(String email, String password){
 
         TestLogger.log("Sending keys to email box");
         sendKeys(emailBox,"emailBox", email);
@@ -36,6 +50,6 @@ public class LoginPage extends ApplicationPageBase {
 
         return new LoginPage();
 
-    }
+    }*/
 
 }

@@ -6,15 +6,15 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import page.objects.HomePage;
 
-public class HomePageTest extends HomePage {
+public class HomePageTest  {
 
    HomePage objOfHomePage = null;
 
-    @BeforeMethod
+    /*@BeforeMethod
     public void initializationOfElements() {
 
         objOfHomePage = PageFactory.initElements(driver, HomePage.class);
-    }
+    }*/
 
     @Test
     public void searchTest (){

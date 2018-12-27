@@ -5,13 +5,16 @@ import application.page.base.ApplicationPageBase;
 import base.BrowserDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
+import reporting.TestLogger;
 
-public class HomePage extends ApplicationPageBase {
+public class HomePage extends ApplicationPageBase  {
 
-   // private WebDriver driver;
+    private WebDriver driver;
 
     @FindBy(how = How.ID, using = "search_query_top")
     private WebElement searchBox;
@@ -22,6 +25,16 @@ public class HomePage extends ApplicationPageBase {
     @FindBy(how = How.PARTIAL_LINK_TEXT, partialLinkText = "Sign in")
     private WebElement signInButton;
 
+    /*public HomePage() {
+        super(BrowserDriver.getUrl());
+        this.driver = BrowserDriver.getDriver();
+        PageFactory.initElements(driver, this);
+    }
+
+    protected void isLoaded() throws Error {
+
+        TestLogger.log("AV Home Page has been loaded");
+    }*/
     public LoginPage getLogInPage() {
 
         signInButton.click();
@@ -30,7 +43,7 @@ public class HomePage extends ApplicationPageBase {
 
     public void clickContactUs(){
 
-        isEnableStatus(driver, contactUs);
+        ApplicationPageBase.isEnableStatus(driver, contactUs);
         contactUs.click();
 
     }

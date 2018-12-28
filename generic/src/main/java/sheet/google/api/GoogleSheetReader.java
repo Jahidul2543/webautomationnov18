@@ -88,4 +88,38 @@ public class GoogleSheetReader {
             return values;
         }
     }
+
+    /**
+     * This method will return two dimensional array
+     * We can use it with @DataProvider annotations
+     *
+     * */
+
+    public static String[][] getSpreadSheetRecordsToSupplyDataProvider(String spreadsheetId, String range) throws IOException {
+        // Build a new authorized API client service.
+
+        List<List<Object>> getSpreadSheetRecords = getSpreadSheetRecords(spreadsheetId, range);
+
+        String[][] array = new String[getSpreadSheetRecords.size()][];
+
+        for (int i = 0; i < getSpreadSheetRecords.size(); i++) {
+            List<Object> row = getSpreadSheetRecords.get(i);
+            array[i] = row.toArray(new String[row.size()]);
+        }
+
+        return array;
+    }
+    /**
+     * Alternative way to convert List to 2d Array
+     *
+     * */
+    public static String[][] getSpreadSheetRecordsToSupplyDataProviderAlternativeWay(String spreadsheetId, String range) throws IOException {
+        // Build a new authorized API client service.
+
+        List<List<Object>> getSpreadSheetRecords = getSpreadSheetRecords(spreadsheetId, range);
+
+        String[][] array = getSpreadSheetRecords.stream().map(u -> u.toArray(new String[0])).toArray(String[][]::new);
+
+        return array;
+    }
 }

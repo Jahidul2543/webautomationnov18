@@ -20,8 +20,8 @@
 
        <!-- <class name="test.page.objects.HomePageTest"/>
         <class name="test.page.objects.ContactUsPageTest"/>-->
-        <class name="test.page.objects.LoginPageTest"/>
-
+       <!-- <class name="test.page.objects.LoginPageTest"/>-->
+        <class name="test.page.objects.UgingGoogleSheetLoginPageTest"/>
     </classes>
 
 

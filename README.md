@@ -55,6 +55,12 @@ Copy the password from your command line. Shall look like same as below <br>
 ![image](https://user-images.githubusercontent.com/34196568/50379375-814f0f00-0616-11e9-8546-8d529a8c7cc8.png)
 
 **3. Set MAVEN_HOME . Apply and Save** <br>
+If maven not installed in your machine use bellow command <br>
+`brew install maven` <br>
+Set MAVEN_HOME and Path in .bash_profile(mac) Systems Variable(Windows) <br>
+Example:<br>
+`export MAVEN_HOME=/usr/local/Cellar/maven/3.5.4/` <br>
+`export PATH=$PATH:export /usr/local/Cellar/maven/3.5.4/bin`<br>
 ![image](https://user-images.githubusercontent.com/34196568/50379662-6a5feb00-061d-11e9-902d-b48518b63968.png)
 **Your local machine is set to run Jenkins Job.** <br>
 **Let's Create Jenkins Job**

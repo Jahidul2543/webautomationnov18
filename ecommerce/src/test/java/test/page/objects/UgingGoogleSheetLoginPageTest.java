@@ -85,6 +85,8 @@ public class UgingGoogleSheetLoginPageTest extends ApplicationPageBase {
         Properties properties = loadProperties();
         String spreadsheetId = properties.getProperty("GOOGLE.spreadsheetId");
         String range = properties.getProperty("GOOGLE.range");
+
+
         TestLogger.log("Using Sheet Number " + range.charAt(5)+ " and fields range  " + range.substring(6));
         List<List<Object>> getRecords = GoogleSheetReader.getSpreadSheetRecords(spreadsheetId,range);
 

@@ -13,11 +13,12 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public  class ApplicationPageBase extends BrowserDriver {
-    /*
+    /**
     * @author Jahidul Islam
     * All commonly used helper methods should be created here
     *
     * */
+
     String pageUrl;
 
 

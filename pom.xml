@@ -13,6 +13,7 @@
         <module>ecommerce</module>
         <module>generic</module>
     </modules>
+
 <dependencyManagement>
   <dependencies>
       <dependency>

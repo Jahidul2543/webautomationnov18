@@ -156,7 +156,8 @@ public class BrowserDriver {
                     driver = new ChromeDriver(options);
                    // TestLogger.log("Chrome Browser Launched");
                 }
-            } else if (browserName.equalsIgnoreCase("firefox")) {
+            }
+            else if (browserName.equalsIgnoreCase("firefox")) {
                  /*
                  * https://chercher.tech/java/chrome-firefox-options-selenium-webdriver
                  *

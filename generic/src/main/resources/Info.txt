@@ -1,0 +1,8 @@
+Define which property file to read
+$ mvn clean test -Dmyproperty=some-property-file.properties
+
+@Test
+public void test() {
+    String propertyFile = System.getProperty("myproperty");
+    assertEquals("some-property-file.properties", propertyFile);
+}

@@ -103,12 +103,16 @@ public class BrowserDriver {
     public static final String saucelabs_username = null;
     public static final String saucelabs_accesskey = null;
 
+    public static String   os = System.getProperty("os", "windows");
 
-    @Parameters({"useCloudEnv","cloudEnvName", "os", "os_version", "browserName", "browserVersion", "url"})
+
+
+    @Parameters({"useCloudEnv","cloudEnvName", /*"os",*/ "os_version", "browserName", "browserVersion", "url"})
     @BeforeMethod
     public void setUp(@Optional("false") boolean useCloudEnv, @Optional("false") String cloudEnvName,
-                      @Optional("windows") String os, @Optional("10") String os_version, @Optional("firefox") String browserName, @Optional("34")
+                      /*@Optional("windows") String os,*/ @Optional("10") String os_version, @Optional("firefox") String browserName, @Optional("34")
                               String browserVersion, @Optional("https://www.google.com") String url) throws IOException {
+
 
         if (useCloudEnv == true) {
             if (cloudEnvName.equalsIgnoreCase("browserstack")) {
